@@ -1,0 +1,46 @@
+/* Define the container div, the cube div, and a generic face */
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    perspective-origin: center;
+    perspective: 500px;
+    overflow: hidden;
+}
+
+.cube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+    animation: cubeRotate 15s linear infinite;
+}
+
+@keyframes cubeRotate {
+    0% {
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateY(360deg);
+    }
+}
+
+.face {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-family: sans-serif;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+}
